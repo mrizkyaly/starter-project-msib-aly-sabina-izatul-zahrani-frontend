@@ -1,8 +1,16 @@
-# React + Vite
+# UI/UX Design Implementation with ReactJS and TailwindCSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an implementation of a UI/UX design using React, Vite, and Tailwind. It includes registration, login, and profile pages.
 
-Currently, two official plugins are available:
+## Design
+[Figma Design](https://www.figma.com/file/Pck6CH3WjHJigsytPvUrRr/Tugas-UI%2FUX-Sabina?type=design&t=zaLL2xMSRyXIcs8h-6)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
+### Login Page
+![Login](./src/assets/loginpage.png)
+
+### Registration Page
+![Registration](./src/assets/registerpage.png)
+
+### Profile Page
+![Profile](./src/assets/profilepage.png)
