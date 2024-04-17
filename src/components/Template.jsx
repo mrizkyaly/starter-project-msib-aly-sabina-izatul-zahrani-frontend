@@ -1,6 +1,6 @@
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import Profile from './Profile';
+import Profile from '../pages/Profile';
 import Footer from './Footer';
 
 const Template = () => {
