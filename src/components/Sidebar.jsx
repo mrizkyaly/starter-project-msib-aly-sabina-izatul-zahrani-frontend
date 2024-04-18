@@ -78,7 +78,7 @@ const Sidebar = () => {
               <div>{React.createElement(menu.icon, { size: "20" })}</div>
               <h2
                 className={`whitespace-pre ${
-                  !open && "opacity-0 translate-x-28 overflow-hidden"
+                  !open && "overflow-hidden"
                 }`}
               >
                 {menu.name}
