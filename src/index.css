@@ -32,7 +32,7 @@
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-[#0b0a14] focus:outline-none;
+    @apply bg-primary hover:bg-[#1b1831] focus:outline-none;
   }
 
   .btn-secondary {

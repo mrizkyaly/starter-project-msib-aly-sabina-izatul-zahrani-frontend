@@ -11,7 +11,7 @@ const Sidebar = () => {
         { name: "Schedule", icon: HiOutlineCalendar, path: "#" },
         { name: "Forum", icon: HiOutlineChatAlt2, path: "#" },
         { name: "Profile", icon: HiOutlineUser, margin: true, path: "/profile" },
-        { name: "Setting", icon: HiOutlineCog, path: "#" },
+        { name: "Settings", icon: HiOutlineCog, path: "#" },
         { name: "Logout", icon: HiOutlineLogout, path: "/" },
       ];
     

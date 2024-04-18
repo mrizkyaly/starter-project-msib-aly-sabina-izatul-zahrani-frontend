@@ -30,7 +30,7 @@ const Profile = () => {
               <p className="text-white">{profileData.email}</p>
               <p className="text-white">{profileData.phoneNumber}</p>
               <p className="text-white">{profileData.address}</p>
-              <p className="text-white mt-2">{profileData.bio}</p>
+              <p className="text-white">{profileData.bio}</p>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Profile = () => {
           <div className="bg-contentbox rounded-2xl p-8 mb-6">
             <label className="block font-bold text-primary mb-2">Edit profile</label>
             <div className="relative">
-              <button className="inline-flex items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded-lg border-border ring-border bg-primary text-white hover:bg-[#0b0a14] py-2 px-3" type="button">
+              <button className="inline-flex items-center whitespace-nowrap focus:outline-none focus:ring border cursor-pointer rounded-lg border-border ring-border bg-primary text-white hover:bg-[#1b1831] py-2 px-3" type="button">
                 <span className="inline-flex justify-center items-center w-6 h-6">
                   <svg viewBox="0 0 24 24" width="16" height="16" className="inline-block">
                     <path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z"></path>
