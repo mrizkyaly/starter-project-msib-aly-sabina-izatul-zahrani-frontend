@@ -53,7 +53,7 @@ const Profile = () => {
             <div className="text-xs text-primary">Max 500kb</div>
           </div>
           <div className="bg-contentbox p-8 rounded-2xl">
-            <div className="mb-4 flex flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            <div className="mb-4 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
               <div className="w-full">
                 <label className="block text-primary font-bold mb-2">First Name:</label>
                 <input type="text" placeholder="Firstname" className="input"/>

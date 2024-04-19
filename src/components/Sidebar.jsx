@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { HiMenuAlt3, HiOutlineAcademicCap, HiOutlineCollection, HiOutlineCalendar, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineLogout, HiOutlineUser, HiOutlineCog, HiOutlineViewGrid } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
@@ -18,24 +18,14 @@ const Sidebar = () => {
       const [open, setOpen] = useState(true);
       const [activeMenu, setActiveMenu] = useState(6); // Menyimpan indeks menu yang aktif
     
-      const handleResize = () => {
-        if (window.innerWidth < 720) {
-          setOpen(false);
-        } else {
-          setOpen(true);
-        }
-      };
-    
-      useEffect(() => {
-        window.addEventListener("resize", handleResize);
-        return () => {
-          window.removeEventListener("resize", handleResize);
-        };
-      }, []);
-    
       const handleMenuClick = (index) => {
         setActiveMenu(index);
       };
+
+      const toggleSidebar = () => {
+        setOpen(!open);
+      };
+
     return (
         <div
       className={`bg-secondary min-h-screen ${
@@ -62,7 +52,7 @@ const Sidebar = () => {
         <HiMenuAlt3
           size={26}
           className="cursor-pointer text-white"
-          onClick={() => setOpen(!open)}
+          onClick={toggleSidebar}
         />
       </div>
     </div>
