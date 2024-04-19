@@ -13,4 +13,4 @@ This project is an implementation of a UI/UX design using React, Vite, and Tailw
 ![Registration](./src/assets/registerpage.png)
 
 ### Profile Page
-![Profile](./src/assets/profilepage.png)
+![Profile](./src/assets/profile.png)
