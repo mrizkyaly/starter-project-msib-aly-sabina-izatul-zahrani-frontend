@@ -13,7 +13,7 @@ const Login = () => {
     const handleLogin = () => {
       console.log("Username:", username);
       console.log("Password:", password);
-      if (username === "sabina" && password === "sabina12") {
+      if (username === "SabinaIzatul" && password === "sabina12") {
         navigate("/profile");
         } else {
             alert("Login Gagal"); 

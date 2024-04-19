@@ -1,15 +1,6 @@
 import {HiEyeOff } from 'react-icons/hi';
 
 const Profile = () => {
-    const profileData = {
-        firstName: "Sabina Izatul",
-        lastName: "Zahrani",
-        email: "sabinaizatulzahrani@gmail.com",
-        phoneNumber: "+62895391403539",
-        address: "Jln. Kenangan 123",
-        bio: "Embrace your dreams, believe in yourself, and let your journey light up the world✨.",
-      };
-    
       const handleSave = () => {
         alert("Changes saved!");
       };
@@ -25,12 +16,12 @@ const Profile = () => {
             </div>
             <div className="text-center md:text-left lg:mx-12 space-y-2">
               <h1 className="text-2xl text-white">Hi,
-                <span className="font-bold"> {`${profileData.firstName} ${profileData.lastName}`}</span>
+              <span className="font-bold"> Sabina Izatul Zahrani</span>
               </h1>
-              <p className="text-white">{profileData.email}</p>
-              <p className="text-white">{profileData.phoneNumber}</p>
-              <p className="text-white">{profileData.address}</p>
-              <p className="text-white">{profileData.bio}</p>
+              <p className="text-white">sabinaizatulzahrani@gmail.com</p>
+              <p className="text-white">+62895391403539</p>
+              <p className="text-white">Jln. Kenangan 123</p>
+              <p className="text-white">Embrace your dreams, believe in yourself, and let your journey light up the world✨</p>
             </div>
           </div>
         </div>
@@ -56,16 +47,16 @@ const Profile = () => {
             <div className="mb-4 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
               <div className="w-full">
                 <label className="block text-primary font-bold mb-2">First Name:</label>
-                <input type="text" placeholder="Firstname" className="input"/>
+                <input type="text" placeholder="Firstname" className="input" defaultValue="Sabina Izatul"/>
               </div>
               <div className="w-full">
                 <label className="block text-primary font-bold mb-2">Last Name:</label>
-                <input type="text" placeholder="Lastname" className="input"/>
+                <input type="text" placeholder="Lastname" className="input" defaultValue="Zahrani"/>
               </div>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Username:</label>
-              <input type="text" placeholder="Input your username here" className="input"/>
+              <input type="text" placeholder="Input your username here" className="input disabled:bg-gray-200" disabled defaultValue="SabinaIzatul"/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Email:</label>
