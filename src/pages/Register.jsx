@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo4.svg';
 import image from '../assets/wfh_1.svg';
 import { HiEyeOff } from "react-icons/hi";
 
 const Register = () => {
+    const navigate = useNavigate();
+    const handleRegister = () => {
+        navigate("/");
+    };
+
     return (
         <div className="flex items-center min-h-screen bg-surface">
             <div className="container mx-auto">
@@ -19,7 +24,7 @@ const Register = () => {
                                 <p className="font-normal text-primary">Please complete to create an account</p>
                             </div>
                         </div>
-                        <form action="/">
+                        {/* Form register */}
                             <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
                                 <div className="w-full">
                                     <label htmlFor="firstname" className="font-medium text-primary">First Name</label>
@@ -42,12 +47,11 @@ const Register = () => {
                               </div>
                             </div>
                             <div className="mt-5">
-                                <button className="w-full px-6 py-3 btn btn-secondary">Register</button>
+                                <button onClick={handleRegister} className="w-full px-6 py-3 btn btn-secondary">Register</button>
                             </div>
                             <div className="mt-5">
                                 <p className="text-primary text-sm text-center">Already have an account? <Link to="/" className="font-semibold underline">Login Now</Link></p>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

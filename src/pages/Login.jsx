@@ -1,9 +1,31 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo4.svg';
 import image from '../assets/wfh_8.svg';
-import { HiEyeOff } from "react-icons/hi";
+import { HiEyeOff, HiEye } from "react-icons/hi";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+  
+    const handleLogin = () => {
+      console.log("Username:", username);
+      console.log("Password:", password);
+      // Perform validation
+      if (username === "sabina" && password === "sabina12") {
+        navigate("/profile");
+        } else {
+            alert("Login Gagal"); 
+        }
+
+    };
+
+    const togglePassword = () => {
+        setShowPassword(!showPassword); 
+    };
+
     return (
     <div className="flex items-center min-h-screen bg-surface">
         <div className="container mx-auto">
@@ -19,27 +41,38 @@ const Login = () => {
                     <p className="font-normal text-primary">Hi, Welcome Back!</p>
                     </div>
                 </div>
-                <form action="/profile">
+                {/* Form login */}
                 <div className="flex flex-col gap-2">
                     <label className="font-medium text-primary">Username</label>
-                    <input type="text" placeholder="Input your username here"
+                    <input 
+                    type="text" 
+                    placeholder="Input your username here"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     className="input"/>
                 </div>
                 <div className="flex flex-col gap-2 mt-2">
                     <label className="font-medium text-primary">Password</label>
                     <div className="relative">
-                    <input type="password" placeholder="Input your password here"
-                        className="input"/>
-                    <HiEyeOff className="eye-icon"/>
+                    <input 
+                    type={showPassword ? "text" : "password"} 
+                    placeholder="Input your password here"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="input"/>
+                    {showPassword ? (
+                        <HiEye className="eye-icon" onClick={togglePassword} /> // Menampilkan icon mata tertutup
+                        ) : (
+                        <HiEyeOff className="eye-icon" onClick={togglePassword} /> // Menampilkan icon mata terbuka
+                        )}
                     </div>
                 </div>
                 <div className="mt-5">
-                    <button className="w-full py-3 btn btn-secondary">Login</button>
+                    <button onClick={handleLogin} className="w-full py-3 btn btn-secondary">Login</button>
                 </div>
                 <div className="mt-5">
                     <p className="text-primary text-sm text-center">Don’t have an account? <Link to="/register" className="font-semibold underline">Register Now</Link></p>
                 </div>
-                </form>
             </div>
             </div>
         </div>
