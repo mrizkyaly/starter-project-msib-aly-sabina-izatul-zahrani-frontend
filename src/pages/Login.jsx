@@ -13,7 +13,6 @@ const Login = () => {
     const handleLogin = () => {
       console.log("Username:", username);
       console.log("Password:", password);
-      // Perform validation
       if (username === "sabina" && password === "sabina12") {
         navigate("/profile");
         } else {
