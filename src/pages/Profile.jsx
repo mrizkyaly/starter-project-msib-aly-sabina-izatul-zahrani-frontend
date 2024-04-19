@@ -56,7 +56,7 @@ const Profile = () => {
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Username:</label>
-              <input type="text" placeholder="Input your username here" className="input disabled:bg-gray-200" disabled defaultValue="SabinaIzatul"/>
+              <input type="text" placeholder="Input your username here" className="input disabled:bg-gray-200" disabled value="SabinaIzatul"/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Email:</label>
