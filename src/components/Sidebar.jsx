@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenuAlt3, HiOutlineAcademicCap, HiOutlineCollection, HiOutlineCalendar, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineLogout, HiOutlineUser, HiOutlineCog, HiOutlineViewGrid } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
@@ -18,6 +18,21 @@ const Sidebar = () => {
       const [open, setOpen] = useState(true);
       const [activeMenu, setActiveMenu] = useState(6); // Menyimpan indeks menu yang aktif
     
+      const handleResize = () => {
+        if (window.innerWidth < 768) {
+          setOpen(false);
+        } else {
+          setOpen(true);
+        }
+      };
+    
+      useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);
+
       const handleMenuClick = (index) => {
         setActiveMenu(index);
       };

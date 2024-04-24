@@ -1,6 +1,15 @@
+import { useState } from "react";
 import {HiEyeOff } from 'react-icons/hi';
 
 const Profile = () => {
+    const [firstName, setFirstName] = useState("Sabina Izatul");
+    const [lastName, setLastName] = useState("Zahrani");
+    const [username, setUsername] = useState("SabinaIzatul");
+    const [email, setEmail] = useState("sabinaizatulzahrani@gmail.com");
+    const [phoneNumber, setPhoneNumber] = useState("+62895391403539");
+    const [address, setAddress] = useState("Jln. Kenangan 123");
+    const [bio, setBio] = useState("Embrace your dreams, believe in yourself, and let your journey light up the world✨");
+
       const handleSave = () => {
         alert("Changes saved!");
       };
@@ -16,12 +25,12 @@ const Profile = () => {
             </div>
             <div className="text-center md:text-left lg:mx-12 space-y-2">
               <h1 className="text-2xl text-white">Hi,
-              <span className="font-bold"> Sabina Izatul Zahrani</span>
+              <span className="font-bold"> {firstName} {lastName} </span>
               </h1>
-              <p className="text-white">sabinaizatulzahrani@gmail.com</p>
-              <p className="text-white">+62895391403539</p>
-              <p className="text-white">Jln. Kenangan 123</p>
-              <p className="text-white">Embrace your dreams, believe in yourself, and let your journey light up the world✨</p>
+              <p className="text-white">{email}</p>
+              <p className="text-white">{phoneNumber}</p>
+              <p className="text-white">{address}</p>
+              <p className="text-white">{bio}</p>
             </div>
           </div>
         </div>
@@ -47,32 +56,32 @@ const Profile = () => {
             <div className="mb-4 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
               <div className="w-full">
                 <label className="block text-primary font-bold mb-2">First Name:</label>
-                <input type="text" placeholder="Firstname" className="input" defaultValue="Sabina Izatul"/>
+                <input type="text" placeholder="Firstname" className="input" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
               </div>
               <div className="w-full">
                 <label className="block text-primary font-bold mb-2">Last Name:</label>
-                <input type="text" placeholder="Lastname" className="input" defaultValue="Zahrani"/>
+                <input type="text" placeholder="Lastname" className="input" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
               </div>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Username:</label>
-              <input type="text" placeholder="Input your username here" className="input disabled:bg-gray-200" disabled value="SabinaIzatul"/>
+              <input type="text" placeholder="Input your username here" className="input disabled:bg-gray-200" disabled value={username} onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Email:</label>
-              <input type="email" placeholder="Input your email here" className="input"/>
+              <input type="email" placeholder="Input your email here" className="input" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Phone Number:</label>
-                <input type="text" placeholder="Input your phone number here" className="input"/>
+                <input type="text" placeholder="Input your phone number here" className="input" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Address:</label>
-              <textarea placeholder="Input your address here" className="input resize-none"/>
+              <textarea placeholder="Input your address here" className="input resize-none" value={address} onChange={(e) => setAddress(e.target.value)}/>
             </div>
             <div className="mb-4">
               <label className="block text-primary font-bold mb-2">Bio:</label>
-              <textarea placeholder="Input your bio here" className="w-full h-32 input resize-none"/>
+              <textarea placeholder="Input your bio here" className="w-full h-32 input resize-none" value={bio} onChange={(e) => setBio(e.target.value)}/>
             </div>
             <div className="mt-auto">
               <button onClick={handleSave} className="py-2 px-4 btn btn-primary">Save</button>

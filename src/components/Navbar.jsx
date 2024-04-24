@@ -1,13 +1,32 @@
-import { useState } from 'react';
-import { HiOutlineSearch, HiOutlineBell, HiOutlineMail, HiChevronDown, HiOutlineLogout, HiOutlineUser, HiOutlineCog } from 'react-icons/hi';
+import { useState, useEffect } from 'react';
+import { HiOutlineSearch, HiOutlineBell, HiOutlineMail, HiChevronDown, HiOutlineLogout, HiOutlineUser, HiOutlineCog, HiX, HiDotsVertical } from 'react-icons/hi';
 import UserAvatar from '../assets/avatar2.png';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const toggleUserMenu = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
     return (
     <nav className="bg-contentbox flex w-full h-[71px] px-7 items-center justify-end sticky top-0 z-50">
@@ -21,7 +40,16 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
+      {/* HiDotsVertical icon */}
+      <div className="md:hidden">
+        {isMenuOpen ? (
+          <HiX className="text-primary text-2xl cursor-pointer" onClick={toggleMenu} />
+        ) : (
+          <HiDotsVertical className="text-primary text-2xl cursor-pointer" onClick={toggleMenu} />
+        )}
+      </div>
+
+      <div className="hidden md:flex items-center space-x-4">
         {/* Bell, and Mail icons */}
         <span className="relative">
           <HiOutlineBell className="w-6 h-6 text-primary hover:text-gray-500 cursor-pointer" />
@@ -56,6 +84,33 @@ const Navbar = () => {
           )}
         </div>
       </div>
+
+      {/* Expanded menu */}
+      {isMenuOpen && (
+          <div className="block absolute top-14 left-0 bg-contentbox w-full">
+          <button className="flex items-center text-primary hover:text-gray-500 py-2 px-3">
+              <HiOutlineBell className="w-6 h-6" />
+              <span className="px-2 font-bold">Notification</span>
+          </button>
+          <button className="flex items-center text-primary hover:text-gray-500 py-2 px-3">
+              <HiOutlineMail className="w-6 h-6" />
+              <span className="px-2 font-bold">Message</span>
+          </button>
+          <hr className="border-t border-gray-300" />
+          <button className="flex items-center text-primary hover:text-gray-500 py-2 px-3">
+              <HiOutlineUser className="w-6 h-6" />
+              <span className="px-2 font-bold">My Profile</span>
+          </button>
+          <button className="flex items-center text-primary hover:text-gray-500 py-2 px-3">
+              <HiOutlineCog className="w-6 h-6" />
+              <span className="px-2 font-bold">Setting</span>
+          </button>
+          <button className="flex items-center text-primary hover:text-gray-500 py-2 px-3">
+              <HiOutlineLogout className="w-6 h-6" />
+              <span className="px-2 font-bold">Logout</span>
+          </button>
+      </div>
+        )}
     </nav>
     );
 };
